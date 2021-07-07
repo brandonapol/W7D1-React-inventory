@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Home, Dashboard, Signin } from './components'; //NEW_ADDITION
+import './styles.css'
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Switch>
+
+        <Route exact path="/">
+          <Home title={'Musical Instruments Inventory'}/> {/* NEW_ADDITION*/}
+        </Route>
+
+        <Route path='/dashboard'>
+          <Dashboard></Dashboard>
+        </Route>
+
+        <Route path='/signin'>
+          <Signin></Signin>
+        </Route>
+      </Switch>
+    </Router>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
