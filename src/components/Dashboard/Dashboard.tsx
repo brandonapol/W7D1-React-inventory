@@ -3,7 +3,8 @@ import my_image from '../../assets/images/babybrandon.jpg'
 import not_my_image from '../../assets/images/inameyoukevin.png'
 import { makeStyles } from '@material-ui/core';
 import { Link } from 'react-router-dom';
-import {Paper} from '@material-ui/core'
+import {Paper} from '@material-ui/core';
+import { DataTable } from '../../components/DataTable';
 
 const useStyles = makeStyles({
     main: {
@@ -16,21 +17,36 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    h3: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        color: 'black',
+    },
     text: {
         display: 'flex',
         flexDirection: 'column',
         color: '#4ef3b4',
         textDecoration: 'none',
         backgroundColor: 'white',
-        width: '30%',
+        width: '60%',
         justifyContent: 'center',
         alignItems: 'center',
     },
     logo:{
-        margin: '0 0 0 0.45em'
+        margin: '0 0 0 0.45em',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     logo_a: {
-        color: 'rgb(28,24,22)'
+        color: '#4ef3b4',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     logo_navigation: {
         listStyle: 'none',
@@ -47,16 +63,17 @@ export const Dashboard = () => {
             {/* why does useStyles() work and we still have to write 'classes' */}
         <div className={useStyles().text}> 
             <h1>Look at your fancy instruments</h1>
-            <p>I stole this meme from <a href="https://www.instagram.com/bandmemes666/">@bandmemes666</a></p>
+            <p>I stole a meme from <a href="https://www.instagram.com/bandmemes666/">@bandmemes666</a> but now I can't make it fit with all this table content so now it is at the signin page</p>
             <h3 className={`${classes.logo}`}>
-                <Link to='/' className={`${ classes.logo_a } ${ classes.logo_navigation }`}>Brandon Brand Click Here to return home</Link>
+                <Link to='/' className={`${ classes.logo_a } ${ classes.logo_navigation }`}>Brandon Brand Click <p className={`${ classes.h3 }`}>Here</p> to return home</Link>
             </h3>
             <h5>Styling this is TERRIBLE</h5>
             <h4>a NIGHTMARE</h4>
-            <p>I was being dramatic I figured it out</p>
-            <Paper variant="outlined">
+            <p className={`${ classes.h3 }`}>I was being dramatic I figured it out</p>
+            {/* <Paper variant="outlined">
             <img src={`${not_my_image}`} alt="band meme"/>
-            </Paper>
+            </Paper> */}
+            <DataTable /> 
         </div>
         </main>
     )
